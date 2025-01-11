@@ -1,0 +1,34 @@
+# Repository Structure
+
+📦 bricks
+ ┣ 📂.github
+ ┃ ┗ 📜workflows
+ ┃   ┗ 📜lint.yml
+ ┣ 📂src
+ ┃ ┣ 📂app
+ ┃ ┃ ┣ 📂api
+ ┃ ┃ ┃ ┗ 📂analyze-image
+ ┃ ┃ ┃   ┗ 📜route.ts
+ ┃ ┃ ┣ 📂components
+ ┃ ┃ ┃ ┗ 📜page.tsx
+ ┃ ┃ ┣ 📜layout.tsx
+ ┃ ┃ ┗ 📜page.tsx
+ ┃ ┣ 📂components
+ ┃ ┃ ┣ 📂ui
+ ┃ ┃ ┃ ┣ 📜alert.tsx
+ ┃ ┃ ┃ ┗ 📜button.tsx
+ ┃ ┃ ┗ 📜image-upload.tsx
+ ┃ ┣ 📂lib
+ ┃ ┃ ┣ 📜openai.ts
+ ┃ ┃ ┗ 📜utils.ts
+ ┃ ┗ 📂types
+ ┃   ┗ 📜index.ts
+ ┣ 📜.env.example
+ ┣ 📜.eslintrc.json
+ ┣ 📜.gitignore
+ ┣ 📜README.md
+ ┣ 📜next.config.js
+ ┣ 📜package.json
+ ┣ 📜postcss.config.js
+ ┣ 📜tailwind.config.js
+ ┗ 📜tsconfig.json
