@@ -8,7 +8,7 @@ import React from 'react'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: 'Image Descriptor',
+  title: 'BrickTalk Automated Quoting',
   description: 'Upload and analyze images using AI',
 }
 
