@@ -1,12 +1,21 @@
 import { NextResponse } from 'next/server';
 import OpenAI from 'openai';
 
-// Initialize OpenAI client
-const openai = new OpenAI({
-  apiKey: process.env.OPENAI_API_KEY,
-});
-
 export async function POST(request: Request) {
+  // Check if API key exists
+  if (!process.env.OPENAI_API_KEY) {
+    console.error('OpenAI API key is not configured');
+    return NextResponse.json(
+      { error: 'OpenAI API key is missing. Please check your .env.local file.' },
+      { status: 500 }
+    );
+  }
+
+  // Initialize OpenAI client
+  const openai = new OpenAI({
+    apiKey: process.env.OPENAI_API_KEY
+  });
+
   try {
     const formData = await request.formData();
     const image = formData.get('image') as Blob | null;
@@ -45,9 +54,9 @@ export async function POST(request: Request) {
       description: response.choices[0].message.content,
     });
   } catch (error) {
-    console.error('Error analyzing image:', error);
+    console.error('Error processing request:', error);
     return NextResponse.json(
-      { error: 'Failed to analyze image' },
+      { error: 'Failed to analyze image. Error: ' + (error as Error).message },
       { status: 500 }
     );
   }
